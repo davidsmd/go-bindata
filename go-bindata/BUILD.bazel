@@ -9,7 +9,7 @@ go_library(
         "main.go",
         "version.go",
     ],
-    importpath = "github.com/davidsmd/go-bindata/main",
+    importpath = "github.com/davidsmd/go-bindata/go-bindata",
     visibility = ["//visibility:public"],
     deps = [
         "//:bindata",
@@ -21,7 +21,7 @@ go_library(
 go_binary(
     name = "go-bindata",
     visibility = ["//visibility:public"],
-    importpath = "github.com/davidsmd/go-bindata/main",
+    importpath = "github.com/davidsmd/go-bindata/go-bindata",
     embed = [
         ":main",
     ],
