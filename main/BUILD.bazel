@@ -1,0 +1,28 @@
+licenses(["permissive"])
+
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_binary")
+
+go_library(
+    name = "main",
+    srcs = [
+        "AppendSliceValue.go",
+        "main.go",
+        "version.go",
+    ],
+    importpath = "github.com/davidsmd/go-bindata/main",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//:bindata",
+    ],
+)
+
+
+
+go_binary(
+    name = "go-bindata",
+    visibility = ["//visibility:public"],
+    importpath = "github.com/davidsmd/go-bindata/main",
+    embed = [
+        ":main",
+    ],
+)
